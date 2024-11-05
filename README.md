@@ -3,7 +3,7 @@ compose-postgrest
 
 [Postgres](https://www.postgresql.org/), [PostgREST](https://github.com/begriffs/postgrest), and [Swagger UI](https://github.com/swagger-api/swagger-ui) conveniently wrapped up with docker-compose.
 
-Place SQL into the `initdb` folder, get REST! 
+Place SQL into the `initdb` folder, get REST!
 
 Usage
 -----
@@ -37,3 +37,10 @@ Try things like:
 **Swagger UI**
 
 Located at [http://localhost:8080](http://localhost:8080)
+
+
+**add permission for insert data to card_info**
+
+GRANT USAGE, SELECT ON SEQUENCE public.card_info_id_seq TO anon;
+
+GRANT INSERT, UPDATE ON TABLE public.card_info TO anon;

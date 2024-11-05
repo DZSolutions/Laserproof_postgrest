@@ -2,7 +2,6 @@
 # ถ้ามีฟังก์ชันนี้อยู่แล้วให้ลบก่อน
 DROP FUNCTION IF EXISTS public.login(TEXT, TEXT);
 
-
 CREATE OR REPLACE FUNCTION public.login(
     username TEXT,
     user_password TEXT
@@ -24,3 +23,7 @@ BEGIN
     RETURN; -- คืนค่าเปล่าถ้าการตรวจสอบไม่ผ่าน
 END;
 $$ LANGUAGE plpgsql;
+
+CREATE ROLE web_anon;
+
+GRANT EXECUTE ON FUNCTION public.login(TEXT, TEXT) TO web_anon;
