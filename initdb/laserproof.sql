@@ -140,6 +140,7 @@ CREATE TYPE overlay_enum AS ENUM (
     'Laser',
     'rPVC Overlay',
     'KP',
+    'dz STD',
     'Other'
 );
 
