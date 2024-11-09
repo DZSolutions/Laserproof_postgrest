@@ -504,6 +504,12 @@ CREATE TABLE card_info (
     special_printing_option2 TEXT,
     special_printing_option3 TEXT,
     special_printing_option4 TEXT,
+
+    special_printing_option1_detail TEXT,
+    special_printing_option2_detail TEXT,
+    special_printing_option3_detail TEXT,
+    special_printing_option4_detail TEXT,
+
     special_printing_customize TEXT,
 
     special_remark_details TEXT,
