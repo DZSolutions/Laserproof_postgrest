@@ -449,6 +449,7 @@ CREATE TABLE card_info (
 
     mag_stripe mag_stripe_enum,
     mag_stripe_color_details VARCHAR(50),
+    mag_stripe_other_details TEXT,
     mag_stripe_hi_co BOOLEAN DEFAULT TRUE,
 
 
