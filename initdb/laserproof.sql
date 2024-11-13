@@ -19,6 +19,12 @@ CREATE TABLE card_usage_type (
     type VARCHAR(20) NOT NULL
 );
 
+CREATE TABLE signature_list (
+    id SERIAL PRIMARY KEY,
+    item VARCHAR(50) NOT NULL,
+    description VARCHAR(255) NOT NULL
+);
+
 INSERT INTO card_usage_type (description, type) VALUES
     ('Debit', 'Financial'),
     ('Credit', 'Financial'),
