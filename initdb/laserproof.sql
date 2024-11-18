@@ -367,7 +367,7 @@ CREATE TABLE card_info (
     request_type request_type_enum,
     request_type_sample_details VARCHAR(50),
 
-    new_oc_no VARCHAR(50),
+    new_oc_no VARCHAR(50) UNIQUE,
     po_no VARCHAR(50),
     qty INTEGER,
     customer_name VARCHAR(255),
