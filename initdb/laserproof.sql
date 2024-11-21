@@ -184,7 +184,9 @@ CREATE TYPE mag_stripe_enum AS ENUM (
 CREATE TABLE chip_list (
     id SERIAL PRIMARY KEY,
     rm_no VARCHAR(50) NOT NULL,
-    item VARCHAR(255) NOT NULL
+    item VARCHAR(255) NOT NULL,
+    item_customer TEXT NOT NULL,
+    inlay_rm_no TEXT[]
 );
 
 INSERT INTO chip_list (rm_no, item) VALUES
@@ -462,6 +464,7 @@ CREATE TABLE card_info (
     chip_status BOOLEAN DEFAULT FALSE,
     chip_model_rm_no VARCHAR(50),
     chip_model_item TEXT,
+    shortname_chip_model_item TEXT,
     chip_model_other_details TEXT,
 
     antenna_inlay_status BOOLEAN DEFAULT FALSE,
