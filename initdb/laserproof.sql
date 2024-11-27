@@ -22,7 +22,8 @@ CREATE TABLE card_usage_type (
 CREATE TABLE signature_list (
     id SERIAL PRIMARY KEY,
     item VARCHAR(50) NOT NULL,
-    description VARCHAR(255) NOT NULL
+    description VARCHAR(255) NOT NULL,
+    payment_brand VARCHAR(50) NOT NULL
 );
 
 INSERT INTO card_usage_type (description, type) VALUES
@@ -215,7 +216,8 @@ CREATE TYPE signature_silk_screen_enum AS ENUM (
 CREATE TABLE hologram_list (
     id SERIAL PRIMARY KEY,
     item VARCHAR(50) NOT NULL,
-    description VARCHAR(255) NOT NULL
+    description VARCHAR(255) NOT NULL,
+    payment_brand VARCHAR(50) NOT NULL
 );
 
 INSERT INTO hologram_list (item, description) VALUES
