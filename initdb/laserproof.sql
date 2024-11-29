@@ -373,7 +373,7 @@ CREATE TABLE card_info (
 
     new_oc_no VARCHAR(50) UNIQUE NOT NULL,
     po_no VARCHAR(50),
-    qty INTEGER,
+    qty VARCHAR(50),
     customer_name VARCHAR(255),
     issuer_name VARCHAR(255),
     card_name_product_description TEXT,
