@@ -395,6 +395,7 @@ CREATE TABLE card_info (
     card_type card_type_enum,
     card_usage_type VARCHAR(50),
     payment_brand payment_brand_enum,
+    purpose VARCHAR(50),
 
     card_functional card_functional_enum,
     card_functional_other_details TEXT,
