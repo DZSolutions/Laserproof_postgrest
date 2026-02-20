@@ -1,0 +1,133 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 13.16
+-- Dumped by pg_dump version 13.16
+
+-- Started on 2024-12-16 03:45:27 UTC
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 208 (class 1259 OID 16659)
+-- Name: hologram_list; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.hologram_list (
+    id integer NOT NULL,
+    item character varying(50) NOT NULL,
+    description character varying(255) NOT NULL,
+    payment_brand character varying(50) DEFAULT 'OTHER'::character varying
+);
+
+
+ALTER TABLE public.hologram_list OWNER TO postgres;
+
+--
+-- TOC entry 207 (class 1259 OID 16657)
+-- Name: hologram_list_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.hologram_list_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.hologram_list_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 3259 (class 0 OID 0)
+-- Dependencies: 207
+-- Name: hologram_list_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.hologram_list_id_seq OWNED BY public.hologram_list.id;
+
+
+--
+-- TOC entry 3097 (class 2604 OID 16662)
+-- Name: hologram_list id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.hologram_list ALTER COLUMN id SET DEFAULT nextval('public.hologram_list_id_seq'::regclass);
+
+
+--
+-- TOC entry 3252 (class 0 OID 16659)
+-- Dependencies: 208
+-- Data for Name: hologram_list; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.hologram_list VALUES (15, 'RM04212', 'HOLOGRAM DZI NEW RUPAY', 'OTHER');
+INSERT INTO public.hologram_list VALUES (19, 'RM01499', 'UPI UNIONPAY GOLD', 'OTHER');
+INSERT INTO public.hologram_list VALUES (8, 'RM05144', 'PH POSTAL', 'OTHER');
+INSERT INTO public.hologram_list VALUES (5, 'RM05974', 'UPI UNIONPAY SILVER', 'OTHER');
+INSERT INTO public.hologram_list VALUES (25, 'RM01020', 'JCB SILVER ', 'OTHER');
+INSERT INTO public.hologram_list VALUES (26, 'RM01021', 'JCB GOLD', 'OTHER');
+INSERT INTO public.hologram_list VALUES (3, 'RM05295', 'VISA SILHOUETTED SILVER', 'VISA');
+INSERT INTO public.hologram_list VALUES (4, 'RM01204', 'MC SILVER', 'MASTERCARD');
+INSERT INTO public.hologram_list VALUES (6, 'RM05763', 'MC GOLD', 'MASTERCARD');
+INSERT INTO public.hologram_list VALUES (7, 'RM04694', 'VISA SILHOUETTED SILVER  แนวตั้ง', 'VISA');
+INSERT INTO public.hologram_list VALUES (9, 'RM04967', 'MC PREMIUM BRABDMARK แนวตั้ง', 'MASTERCARD');
+INSERT INTO public.hologram_list VALUES (10, 'RM04926', 'VISA PREMIUM BRABDMARK GOLD แนวตั้ง', 'VISA');
+INSERT INTO public.hologram_list VALUES (11, 'RM04924', 'VISA PREMIUM BRABDMARK SILVER แนวตั้ง', 'VISA');
+INSERT INTO public.hologram_list VALUES (14, 'RM04694', 'VISA SILHOUETTED SILVER  แนวตั้ง', 'VISA');
+INSERT INTO public.hologram_list VALUES (16, 'RM04020', 'MC SILVER แนวตั้ง', 'MASTERCARD');
+INSERT INTO public.hologram_list VALUES (17, 'RM03406', 'VISA PREMIUM BRABDMARK SILVER', 'VISA');
+INSERT INTO public.hologram_list VALUES (18, 'RM01974', 'VISA PREMIUM BRABDMARK GOLD', 'VISA');
+INSERT INTO public.hologram_list VALUES (22, 'RM01252', 'MC SILVER (DEBIT)', 'MASTERCARD');
+INSERT INTO public.hologram_list VALUES (23, 'RM05763', 'MC GOLD', 'MASTERCARD');
+INSERT INTO public.hologram_list VALUES (24, 'RM01123', 'MC PREMIUM BRABDMARK', 'MASTERCARD');
+
+
+--
+-- TOC entry 3260 (class 0 OID 0)
+-- Dependencies: 207
+-- Name: hologram_list_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.hologram_list_id_seq', 27, true);
+
+
+--
+-- TOC entry 3100 (class 2606 OID 16664)
+-- Name: hologram_list hologram_list_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.hologram_list
+    ADD CONSTRAINT hologram_list_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 3258 (class 0 OID 0)
+-- Dependencies: 208
+-- Name: TABLE hologram_list; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT SELECT ON TABLE public.hologram_list TO anon;
+
+
+-- Completed on 2024-12-16 03:45:27 UTC
+
+--
+-- PostgreSQL database dump complete
+--
+

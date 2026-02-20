@@ -679,6 +679,11 @@ CREATE TABLE color_edge (
     item VARCHAR(50) NOT NULL
 );
 
+CREATE TABLE chip_downgrade
+(
+    name TEXT,
+)
+
 INSERT INTO color_edge (color, item) VALUES
 ('Black Glossy', 'RM01713,RM01714'),
 ('Black Matt', 'RM004129'),

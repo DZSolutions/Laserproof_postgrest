@@ -1,0 +1,140 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 13.16
+-- Dumped by pg_dump version 13.16
+
+-- Started on 2024-12-16 03:42:27 UTC
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 206 (class 1259 OID 16641)
+-- Name: antenna_list; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.antenna_list (
+    id integer NOT NULL,
+    rm_no character varying(50) NOT NULL,
+    item character varying(255) NOT NULL
+);
+
+
+ALTER TABLE public.antenna_list OWNER TO postgres;
+
+--
+-- TOC entry 205 (class 1259 OID 16639)
+-- Name: antenna_list_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.antenna_list_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.antenna_list_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 3258 (class 0 OID 0)
+-- Dependencies: 205
+-- Name: antenna_list_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.antenna_list_id_seq OWNED BY public.antenna_list.id;
+
+
+--
+-- TOC entry 3097 (class 2604 OID 16644)
+-- Name: antenna_list id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.antenna_list ALTER COLUMN id SET DEFAULT nextval('public.antenna_list_id_seq'::regclass);
+
+
+--
+-- TOC entry 3251 (class 0 OID 16641)
+-- Dependencies: 206
+-- Data for Name: antenna_list; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.antenna_list VALUES (5, 'SFG000190', 'INLAY PRELAM -UBJ31-G29 ');
+INSERT INTO public.antenna_list VALUES (10, 'RM05536', 'INLAY PRELAM WIRE ST1.1');
+INSERT INTO public.antenna_list VALUES (11, 'RM05631', 'INLAY RECYCLE PRELAM WIRE ST1.1 ');
+INSERT INTO public.antenna_list VALUES (13, 'RM03787 ', 'INLAY RECYCLE PRELAM WIRE UBJ31-G28');
+INSERT INTO public.antenna_list VALUES (15, 'RM05061', 'INLAY PRELAM WIRE UBJ31-G29 JCB');
+INSERT INTO public.antenna_list VALUES (16, 'RM04459', 'INLAY PRELAM MULTOS');
+INSERT INTO public.antenna_list VALUES (17, 'SFG000180 ', 'INLAY BIO MULTOS');
+INSERT INTO public.antenna_list VALUES (19, 'RM06157 ', 'INLAY SPS UBJ31-G33');
+INSERT INTO public.antenna_list VALUES (21, 'RM05572/RM05591', 'INLAY TRANSPARENT WIRE ST1.1');
+INSERT INTO public.antenna_list VALUES (23, 'SFG000153', 'INLAY RECYCLE PRELAM WIRE NXP( TITANIUM)');
+INSERT INTO public.antenna_list VALUES (24, 'RM02015', 'INLAY MIFARE NXP MOA8');
+INSERT INTO public.antenna_list VALUES (25, 'SFG000191', 'INLAY MIFARE CLASSIC 1K MOA4 (ตำแหน่งชิพขวาล่าง)');
+INSERT INTO public.antenna_list VALUES (26, 'SFG000193', 'INLAY MIFARE CLASSIC 1K MOA4 (ตำแหน่งชิพซ้ายบน)');
+INSERT INTO public.antenna_list VALUES (27, 'SFG000192', 'INLAY MIFARE CLASSIC 1K MOA4 (ตำแหน่งชิพขวาบน)');
+INSERT INTO public.antenna_list VALUES (28, 'RM04975 ', 'INLAY EMLINQ ');
+INSERT INTO public.antenna_list VALUES (29, 'rm05285', 'INLAY METAL UBJ31-G28 (VISA ONLY)');
+INSERT INTO public.antenna_list VALUES (30, 'RM04974', 'INLAY METAL ST1.1 ( MASTERCARD ONLY)');
+INSERT INTO public.antenna_list VALUES (31, 'RM04667 ', 'INLAY SPS ST1.8 ');
+INSERT INTO public.antenna_list VALUES (32, 'RM01726 ', 'INLAY SPS COSMO FLY (old )');
+INSERT INTO public.antenna_list VALUES (33, 'RM05539 ', 'INLAY PRELAM WIRE COSMO FLY');
+INSERT INTO public.antenna_list VALUES (34, 'RM04213', 'INLAY PRELAM WIRE UBJ31-G29');
+INSERT INTO public.antenna_list VALUES (8, 'RM05339/RM05538/SFG000127', 'INLAY PRELAM WIRE NXP P71 J3R200');
+INSERT INTO public.antenna_list VALUES (12, 'RM05630/SFG000143', 'INLAY RECYCLE PRELAM WIRE NXP P71 J3R200');
+INSERT INTO public.antenna_list VALUES (14, 'RM4068/RM05962', 'INLAY TRANSPARENT WIRE NXP P71 J3R200');
+INSERT INTO public.antenna_list VALUES (20, 'RM04443', 'INLAY PRELAM WIRE COMBO UHF NXP P71 J3R200');
+INSERT INTO public.antenna_list VALUES (4, 'RM05912', 'INLAY SPS ST/NXP P71 J3R200');
+INSERT INTO public.antenna_list VALUES (35, 'RM05721', 'INLAY ACT PVC TRANSPARENT THICKNESS 0.24');
+INSERT INTO public.antenna_list VALUES (22, 'RM05067', 'INLAY TRANSPARENT PRELAM WIRE UBJ31-G29');
+
+
+--
+-- TOC entry 3259 (class 0 OID 0)
+-- Dependencies: 205
+-- Name: antenna_list_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.antenna_list_id_seq', 35, true);
+
+
+--
+-- TOC entry 3099 (class 2606 OID 16646)
+-- Name: antenna_list antenna_list_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.antenna_list
+    ADD CONSTRAINT antenna_list_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 3257 (class 0 OID 0)
+-- Dependencies: 206
+-- Name: TABLE antenna_list; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT SELECT ON TABLE public.antenna_list TO anon;
+
+
+-- Completed on 2024-12-16 03:42:27 UTC
+
+--
+-- PostgreSQL database dump complete
+--
+

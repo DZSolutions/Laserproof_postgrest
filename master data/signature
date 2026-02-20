@@ -1,0 +1,132 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 13.16
+-- Dumped by pg_dump version 13.16
+
+-- Started on 2024-12-16 03:45:50 UTC
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 236 (class 1259 OID 16931)
+-- Name: signature_list; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.signature_list (
+    id integer NOT NULL,
+    item character varying(50) NOT NULL,
+    description character varying(255) NOT NULL,
+    payment_brand character varying(50) DEFAULT 'OTHER'::character varying
+);
+
+
+ALTER TABLE public.signature_list OWNER TO postgres;
+
+--
+-- TOC entry 235 (class 1259 OID 16929)
+-- Name: signature_list_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.signature_list_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.signature_list_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 3259 (class 0 OID 0)
+-- Dependencies: 235
+-- Name: signature_list_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.signature_list_id_seq OWNED BY public.signature_list.id;
+
+
+--
+-- TOC entry 3097 (class 2604 OID 16934)
+-- Name: signature_list id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.signature_list ALTER COLUMN id SET DEFAULT nextval('public.signature_list_id_seq'::regclass);
+
+
+--
+-- TOC entry 3252 (class 0 OID 16931)
+-- Dependencies: 236
+-- Data for Name: signature_list; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.signature_list VALUES (13, 'RM01019', 'JCB 11x45MM', 'OTHER');
+INSERT INTO public.signature_list VALUES (11, 'RM01422', 'UPI UNIONPAY 10x57MM(CREDET ONLY)', 'OTHER');
+INSERT INTO public.signature_list VALUES (10, 'RM01497', 'UPI UNIONPAY 10x57MM(DEBIT ONLY)', 'OTHER');
+INSERT INTO public.signature_list VALUES (20, 'RM01019', 'JCB 10x57MM', 'OTHER');
+INSERT INTO public.signature_list VALUES (2, 'RM02038', 'VISA-Std 8 x 30.5 mm', 'VISA');
+INSERT INTO public.signature_list VALUES (1, 'RM01124', 'MC Std 8 x 30.5 mm', 'MASTERCARD');
+INSERT INTO public.signature_list VALUES (5, 'RM06077', 'VISA-8X30.5 MM ( แนวตั้ง )', 'VISA');
+INSERT INTO public.signature_list VALUES (6, 'RM05320', 'VISA-5X30.5 MM (GRAY แนวตั้ง)', 'VISA');
+INSERT INTO public.signature_list VALUES (7, 'RM04311', 'VISA-5X30.5 MM (SILVER แนวตั้ง)', 'VISA');
+INSERT INTO public.signature_list VALUES (8, 'RM04302', 'VISA-5x37.5 MM (SILVER MET)', 'VISA');
+INSERT INTO public.signature_list VALUES (9, 'RM04101', 'VISA 5x37.5 MM (Gray )', 'VISA');
+INSERT INTO public.signature_list VALUES (12, 'RM01268', 'MC-8X59.64 MM', 'MASTERCARD');
+INSERT INTO public.signature_list VALUES (15, 'RM00001', 'VISA-8X59.64 MM', 'VISA');
+INSERT INTO public.signature_list VALUES (16, 'RM00001', 'VISA- 8X71 MM', 'VISA');
+INSERT INTO public.signature_list VALUES (17, 'RM02038', ' VISA-STD 8X37.7 MM', 'VISA');
+INSERT INTO public.signature_list VALUES (18, 'RM02038', 'VISA-STD 8X49 MM', 'VISA');
+INSERT INTO public.signature_list VALUES (19, 'RM01124', ' MC-8X37.7 MM', 'MASTERCARD');
+INSERT INTO public.signature_list VALUES (21, 'RM01124', 'MC -8X49 MM', 'MASTERCARD');
+INSERT INTO public.signature_list VALUES (22, 'RM01268', 'MC- 8X71 MM', 'MASTERCARD');
+
+
+--
+-- TOC entry 3260 (class 0 OID 0)
+-- Dependencies: 235
+-- Name: signature_list_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.signature_list_id_seq', 23, true);
+
+
+--
+-- TOC entry 3100 (class 2606 OID 16936)
+-- Name: signature_list signature_list_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.signature_list
+    ADD CONSTRAINT signature_list_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 3258 (class 0 OID 0)
+-- Dependencies: 236
+-- Name: TABLE signature_list; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT SELECT ON TABLE public.signature_list TO anon;
+
+
+-- Completed on 2024-12-16 03:45:50 UTC
+
+--
+-- PostgreSQL database dump complete
+--
+

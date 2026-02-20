@@ -17,6 +17,7 @@ services:
       - DB_ANON_ROLE=${DB_ANON_ROLE}
       - DB_SCHEMA=${DB_SCHEMA}
     volumes:
+      - postgrest-db-data:/var/lib/postgresql/data
       - "./initdb:/docker-entrypoint-initdb.d"
     networks:
       - postgrest-backend
@@ -58,6 +59,7 @@ services:
 
 volumes:
   pgadmin-data:
+  postgrest-db-data:
 
 networks:
   postgrest-backend:
